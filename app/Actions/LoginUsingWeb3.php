@@ -23,7 +23,7 @@ class LoginUsingWeb3
             'eth_address' => $request->address
         ]));
 
-        return Redirect::route('moodtracker.index');
+        return Redirect::route('moodtracker');
     }
 
     protected function authenticate(Request $request): bool
