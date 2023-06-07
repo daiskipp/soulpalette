@@ -67,9 +67,9 @@ const submit = async () => {
             </div>
         </div>
         <div class="text-center pt-4 pb-8 border-b border-gray-200">
-            <NavLink @click="loginWeb3">
+            <button  @click="loginWeb3" class="btn btn-primary">
                 Login with MetaMask
-            </NavLink>
+            </button>
         </div>
         <div class="py-6 text-sm text-gray-500 text-center">
             or login with your credentials…
@@ -79,7 +79,8 @@ const submit = async () => {
         </div>
 
         <form @submit.prevent="submit">
-            <div>
+<!--
+          <div>
                 <InputLabel for="email" value="Email" />
                 <TextInput
                     id="email"
@@ -122,7 +123,9 @@ const submit = async () => {
                     Log in
                 </PrimaryButton>
             </div>
+          -->
         </form>
+
     </AuthenticationCard>
 </template>
 
