@@ -71,9 +71,11 @@ const submit = async () => {
                 Login with MetaMask
             </button>
         </div>
+        <!--
         <div class="py-6 text-sm text-gray-500 text-center">
             or login with your credentials…
         </div>
+        -->
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>

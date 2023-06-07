@@ -18,10 +18,13 @@ const monthlyData = ref([]);
         Diary
       </h2>
     </template>
-    <div class="">
+    <div class="contents-center">
+      <img src="/images/samplediary.png" class="w-auto items-center mx-auto">
+<!--
       <TodayColors :colors="todayColors" />
       <WeeklyColors :weekly="weeklyData" />
       <MonthlyColors :monthly="monthlyData" />
+-->
     </div>
   </DefaultLayout>
 </template>
