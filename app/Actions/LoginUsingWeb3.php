@@ -26,7 +26,7 @@ class LoginUsingWeb3
         ]));
         $user = Auth::user();
 
-        return Redirect::route('moodtracker');
+        return Redirect::route('diary');
     }
 
     protected function authenticate(Request $request): bool

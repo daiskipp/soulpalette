@@ -16,7 +16,7 @@ createServer(async (page) => {
     const storedEthData = JSON.parse(sessionStorage.getItem('ethData'));
     const shouldFetchData = sessionStorage.getItem('shouldFetchData');
     console.log('shouldFetchData', shouldFetchData);
-    if (shouldFetchData || ( userEthAddress && !storedEthData )) {
+    if (userEthAddress && (shouldFetchData==true || !storedEthData)) {
         // ポリゴンチェーンからデータを取得
         const contractRPC = props.initialPage.props.contractRPC;
         const contractABI = props.initialPage.props.contractABI;
