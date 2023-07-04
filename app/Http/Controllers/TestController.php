@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class DiaryController extends Controller
+class TestController extends Controller
 {
     /**
      * Undocumented function
@@ -14,17 +14,6 @@ class DiaryController extends Controller
      */
     public function index(Request $request)
     {
-        return Inertia::render('Diary/Index');
+        return Inertia::render('Test');
     }
-
-    /**
-     * Undocumented function
-     *
-     * @return void
-     */
-    public function store(Request $request)
-    {
-
-    }
-
 }

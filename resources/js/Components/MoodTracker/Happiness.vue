@@ -28,15 +28,20 @@ const getHappinessColor = (num) => {
   <div class="mx-auto cmax-w-md w-full m-5">
     <div class="h-50 ">
       <p class="item-center text-center">select your happiness</p>
-      <div class="flex justify-evenly happiness py-2">
+      <div class="flex justify-evenly happiness py-2 w-full h-full">
       <div
         v-for="num in [1, 2, 3, 4, 5]"
         :key="num"
         :id="happiness-{num}"
-        class="h-30 w-30 rounded-full badge badge-secondar border-solid border-2 "
-        :style="{ backgroundColor: getHappinessColor(num) }"
+        class="flex items-center justify-center w-full rounded-full cursor-pointer"
         @click="selectHappiness(num)"
-      >{{ num }}
+      >
+        <span
+          class="border-1 outline-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 focus:bg-gray-400 hover:bg-gray-400 text-base w-10 h-10 flex items-center justify-center font-medium text-black rounded-full"
+          :class="{ outlineColor: happinessColor }"
+          style="border: 1px solid #ccc;"
+          :style="{ backgroundColor: getHappinessColor(num) }"
+          >{{ num }}</span>
       </div>
     </div>
   </div>

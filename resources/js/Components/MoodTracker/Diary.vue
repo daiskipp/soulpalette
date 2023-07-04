@@ -7,6 +7,7 @@ const props = defineProps({
   colors: Array,
   happiness: Number,
   comments: Array,
+  stamps: Array,
 });
 
 const emit = defineEmits(["selectHappiness", "updateComment"]);
@@ -21,6 +22,18 @@ const updateComment = (index, comment) => {
   console.log("Diaryvue.comments=")
   console.log(comments.value);
 };
+const stamps = ref([]);
+const updateStamp = (index, stamp) => {
+  console.log('dailyvue.index', index);
+  console.log('dailyvue.stamp', stamp);
+  props.stamps[index] = stamp;
+  emit('updateStamp', props.stamps);
+  console.log("Diaryvue.stamps=")
+  console.log(stamps.value);
+};
+
+
+
 watchEffect(() => {
 
 });
@@ -28,9 +41,9 @@ watchEffect(() => {
 
 <template>
   <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-    <Happiness :happinessColor="colors[0]" @click="selectHappiness" />
     <div class="bg-white py-5" v-for="(color, index) in colors" :key="color">
-      <DiaryTextarea :color="color" :index="index" @updateComment="updateComment" />
+      <DiaryTextarea :color="color" :index="index" @updateComment="updateComment" @updateStamp="updateStamp"/>
     </div>
+    <Happiness :happinessColor="colors[0]" @click="selectHappiness" />
   </div>
 </template>

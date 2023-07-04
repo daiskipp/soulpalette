@@ -6,6 +6,7 @@ use Inertia\Inertia;
 //use App\Http\Controllers\MoodtrackerController;
 use App\Http\Controllers\Moodtracker;
 use App\Http\Controllers\Diary;
+use App\Http\Controllers\TestController;
 use App\Actions\LoginUsingWeb3;
 
 /*
@@ -45,6 +46,7 @@ Route::middleware([
 
     Route::get('/diary', Diary::class)->name('diary');
     Route::get('/moodtracker', Moodtracker::class)->name('moodtracker');
+    Route::get('/test', [TestController::class, 'index'])->name('test');
 
 
 });

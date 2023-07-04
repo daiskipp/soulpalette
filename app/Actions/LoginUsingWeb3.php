@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use kornrunner\Keccak;
+use Web3\Web3;
+use Web3\Contract;
 
 class LoginUsingWeb3
 {
@@ -22,12 +24,14 @@ class LoginUsingWeb3
         Auth::login(User::firstOrCreate([
             'eth_address' => $request->address
         ]));
+        $user = Auth::user();
 
         return Redirect::route('moodtracker');
     }
 
     protected function authenticate(Request $request): bool
     {
+
         return $this->verifySignature(
             $request->message,
             $request->signature,
