@@ -1,6 +1,7 @@
 <?php
 return [
-    'contract_address' => env('CONTRACT_ADDRESS', '0x03db1b6bc4eee7fa3f0e3a067e46bd8efa24747b'),
+    'rpc_url' => env('RPC_URL', 'https://rpc-mumbai.maticvigil.com'),
+    'contract_address' => env('CONTRACT_ADDRESS', '0x92027fAe9300a58e690B0E9eE02fEe3A21007050'),
     'contract_abi' => env('CONTRACT_ABI', '[{"inputs":[{"internalType":"string[4]","name":"colors","type":"string[4]"},{"internalType":"string[4]","name":"comments","type":"string[4]"},{"internalType":"int8","name":"happiness","type":"int8"},{"internalType":"uint256","name":"timestamp","type":"uint256"}],"name":"addEntry","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"entries","outputs":[{"internalType":"int8","name":"happiness","type":"int8"},{"internalType":"uint256","name":"timestamp","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"user","type":"address"},{"internalType":"uint256","name":"startTimestamp","type":"uint256"},{"internalType":"uint256","name":"endTimestamp","type":"uint256"}],"name":"getEntries","outputs":[{"components":[{"internalType":"string[4]","name":"colors","type":"string[4]"},{"internalType":"string[4]","name":"comments","type":"string[4]"},{"internalType":"int8","name":"happiness","type":"int8"},{"internalType":"uint256","name":"timestamp","type":"uint256"}],"internalType":"struct SoulPalette.Entry[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"}]'),
     'colors' => [
         "#ee8592",

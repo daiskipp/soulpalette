@@ -1,22 +1,25 @@
 <script setup>
 import { defineProps, ref, defineEmits, watchEffect } from "vue";
-
+import TodayColors from "@/Components/Diary/TodayColors.vue";
 const props = defineProps({
-  weekly: [],
+  weekly: Object,
 });
 
-
+console.log('weekly', props.weekly);
 </script>
 
 <template>
-  <div class="mx-auto max-w-md">
-    <div class="flex h-50 max-w-md items-center justify-evenly colors">
-      <div
-        v-for="week in weekly"
-        :key="week"
-        class="h-30 w-30 rounded"
-      ></div>
-    </div>
+  <div class="mx-auto mt-10">
+    <ol class="">
+      <template v-for="dateitem in weekly">
+      <li class="mb-2 border-t-2 border-dashed pt-2 hover:bg-gray-100">
+        <h4 class="text-xs font-sans font-bold text-center mb-2">{{ dateitem.day }}</h4>
+        <div class="pb-2">
+          <TodayColors :entry='dateitem.entry' :colors="dateitem.colors" :date="dateitem.day" mode="otherday" />
+        </div>
+      </li>
+      </template>
+    </ol>
   </div>
 </template>
 

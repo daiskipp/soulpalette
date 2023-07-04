@@ -36,7 +36,9 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
-            'soulpalette' => config('soulpalette'),
+            'contractRPC' => config('soulpalette.rpc_url'),
+            'contractAddress' => config('soulpalette.contract_address'),
+            'contractABI' => json_decode(config('soulpalette.contract_abi')),
         ]);
     }
 }

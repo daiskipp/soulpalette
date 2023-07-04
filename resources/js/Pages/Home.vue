@@ -28,7 +28,7 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <ul class="navi">
                 <li class="items-center">
-                    <Link :href="route('moodtracker')">mood tracker</Link>
+                    <Link :href="route('diary')">mood tracker</Link>
                 </li>
                 <li>
                   <Link>mood chat</Link>

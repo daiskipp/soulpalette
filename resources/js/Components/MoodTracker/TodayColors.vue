@@ -4,6 +4,7 @@ import { defineProps, ref, defineEmits, watchEffect } from "vue";
 
 const props = defineProps({
   colors: Array,
+  colorlock: Boolean,
 });
 
 const emit = defineEmits(["removeColor"]);
