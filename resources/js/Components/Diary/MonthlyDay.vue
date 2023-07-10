@@ -15,6 +15,7 @@ const visible = ref(false);
 
 
 const openModal = () => {
+  console.log('props.dayitem', props.dayitem);
   if(props.dayitem.color1){
     visible.value = true;
   }
@@ -37,7 +38,7 @@ const closeModal = (id) => { // 識別子を引数に追加
       >{{ dayitem.day }}</a>
       <DayItem
           :isVisible="visible"
-          :date="dayitem.date"
+          :date="dayitem.entry.date"
           :colors="dayitem.entry.colors"
           :happiness="dayitem.entry.happiness"
           :comments="dayitem.entry.comments"
