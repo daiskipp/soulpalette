@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps, watchEffect, ref, defineEmits } from "vue";
+import DayItem from "@/Components/Diary/DayItem.vue";
 
 const props = defineProps({
   dayitem: Object
@@ -14,7 +15,6 @@ const visible = ref(false);
 
 
 const openModal = () => {
-  console.log('color1', props.dayitem.color1)
   if(props.dayitem.color1){
     visible.value = true;
   }
